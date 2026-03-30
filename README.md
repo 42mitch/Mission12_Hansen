@@ -1,8 +1,6 @@
-# Mission 12 - Bookstore Application
+# Bootstrap Requirements (FOR GRADING)
 
 I forgot to submit with Bootstrap comments. I've included them here for your grading purposes. Thank you.
-
-## Bootstrap Requirements (FOR GRADING)
 
 In addition to using the Bootstrap Grid layout, I implemented two Bootstrap features not covered in class. Below are exactly what was used and where to find them in the code.
 
