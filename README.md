@@ -25,7 +25,7 @@ Keeps the cart summary visible while scrolling.
 Displays each book’s category as a styled pill badge.
 
 **Where to find it:**  
-- File: frontend/src/components/BookList.tsx
+- File: `frontend/src/components/BookList.tsx`
 - Code:
 
 ```
