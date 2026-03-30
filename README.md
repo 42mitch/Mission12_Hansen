@@ -15,8 +15,9 @@ Keeps the cart summary visible while scrolling.
 - File: `frontend/src/components/CartSummary.tsx`
 - Code:
 
+```
 <div className="card shadow-sm sticky-top" style={{ top: '1rem' }}>
-
+```
 
 ### 2. Category Badge Styling
 
@@ -27,6 +28,8 @@ Displays each book’s category as a styled pill badge.
 - File: frontend/src/components/BookList.tsx
 - Code:
 
+```
 <span className="badge rounded-pill text-bg-secondary">
   {b.category}
 </span>
+```
