@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import BookList from './components/BookList'
 import ShoppingCart from './components/ShoppingCart'
+import AdminBooks from './components/AdminBooks'
 import type { CartItem } from './types/CartItem'
 import type { Book } from './types/Book'
 
@@ -68,6 +69,7 @@ function App() {
             />
           }
         />
+        <Route path="/adminbooks" element={<AdminBooks />} />
       </Routes>
     </BrowserRouter>
   )
