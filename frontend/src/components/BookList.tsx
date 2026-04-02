@@ -18,6 +18,8 @@ const BookList = ({ cart, addToCart }: BookListProps) => {
   const [searchParams, setSearchParams] = useSearchParams()
   const navigate = useNavigate()
 
+  const apiUrl = import.meta.env.VITE_API_URL || 'https://mission13-hansen.azurewebsites.net/'
+
   const initialPageNum = Number(searchParams.get('pageNum')) || 1
   const initialPageSize = Number(searchParams.get('pageSize')) || 5
   const initialSortOrder = searchParams.get('sortOrder') || 'asc'
@@ -35,7 +37,7 @@ const BookList = ({ cart, addToCart }: BookListProps) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('http://localhost:5089/Books/categories')
+        const response = await fetch(`${apiUrl}/Books/categories`)
 
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`)
@@ -71,7 +73,7 @@ const BookList = ({ cart, addToCart }: BookListProps) => {
         setError('')
 
         const response = await fetch(
-          `http://localhost:5089/Books?pageSize=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}&category=${encodeURIComponent(selectedCategory)}`
+          `${apiUrl}/Books?pageSize=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}&category=${encodeURIComponent(selectedCategory)}`
         )
 
         if (!response.ok) {

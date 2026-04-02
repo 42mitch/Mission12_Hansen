@@ -18,7 +18,7 @@ const AdminBooks = () => {
   const [formData, setFormData] = useState<Book>(emptyBook)
   const [isEditing, setIsEditing] = useState(false)
 
-  const apiUrl = 'http://localhost:5089/Books'
+  const apiUrl = import.meta.env.VITE_API_URL || 'https://mission13-hansen.azurewebsites.net/'
 
   const fetchBooks = async () => {
     const response = await fetch(`${apiUrl}?pageSize=100&pageNum=1&sortOrder=asc&category=All`)
@@ -48,7 +48,7 @@ const AdminBooks = () => {
     e.preventDefault()
 
     if (isEditing) {
-      await fetch(`${apiUrl}/${formData.bookID}`, {
+        await fetch(`${apiUrl}/Books/${formData.bookID}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -65,7 +65,7 @@ const AdminBooks = () => {
         price: formData.price,
       }
 
-      await fetch(apiUrl, {
+      await fetch(`${apiUrl}/Books`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(bookToCreate),
@@ -84,7 +84,7 @@ const AdminBooks = () => {
   }
 
   const handleDelete = async (id: number) => {
-    await fetch(`${apiUrl}/${id}`, {
+    await fetch(`${apiUrl}/Books/${id}`, {
       method: 'DELETE',
     })
 
