@@ -21,7 +21,7 @@ const AdminBooks = () => {
   const apiUrl = import.meta.env.VITE_API_URL || 'https://mission13-hansen.azurewebsites.net/'
 
   const fetchBooks = async () => {
-    const response = await fetch(`${apiUrl}?pageSize=100&pageNum=1&sortOrder=asc&category=All`)
+    const response = await fetch(`${apiUrl}/Books?pageSize=100&pageNum=1&sortOrder=asc&category=All`)
     const data = await response.json()
     setBooks(data.books ?? [])
   }
